@@ -41,3 +41,5 @@ gem 'jbuilder', '~> 2.5'
 group :development do
   gem 'listen', '~> 3.0.5'
 end
+
+gem 'bootstrap-sass'
