@@ -2,9 +2,8 @@ require 'random_data'
 
  # Create Posts
  50.times do
- # #1
+
    Post.create!(
- # #2
      title:  RandomData.random_sentence,
      body:   RandomData.random_paragraph
    )
@@ -12,15 +11,23 @@ require 'random_data'
  posts = Post.all
  
  # Create Comments
- # #3
+
  100.times do
    Comment.create!(
- # #4
      post: posts.sample,
      body: RandomData.random_paragraph
    )
  end
- 
+
+ #Assignment 16
+ puts "#{Post.count}"
+ unique_post = Post.find_or_create_by(title: "Title-Unique", body: "Body-Unique")
+ puts "#{Post.count}"
+
+ puts "#{Comment.count}"
+ unique_comment = Comment.find_or_create_by(post: unique_post, body: "Body-Unique")
+ puts "#{Comment.count}"
+
  puts "Seed finished"
  puts "#{Post.count} posts created"
  puts "#{Comment.count} comments created"
