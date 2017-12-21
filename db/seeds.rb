@@ -28,6 +28,15 @@ require 'random_data'
  unique_comment = Comment.find_or_create_by(post: unique_post, body: "Body-Unique")
  puts "#{Comment.count}"
 
+ #Assignment 18
+ 100.times do
+  Advertisement.create!(
+    title: RandomData.random_sentence,
+    copy:  RandomData.random_paragraph,
+    price: Random.rand(10)
+  )
+end
+
  puts "Seed finished"
  puts "#{Post.count} posts created"
  puts "#{Comment.count} comments created"

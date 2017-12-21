@@ -1,10 +1,12 @@
 <h1>Sponsored by:</h1>
 
+ <%= link_to "New Ad", new_advertisement_path(@advertisement), class: 'btn btn-success' %>
+
 <% @advertisements.each do |advert| %> 
 <div class="media">
      <div class="media-body">
        <h4 class="media-heading">
-         <%= link_to "$#{advert.price}: #{advert.title}", advert %>
+        <%= link_to advert.title, advert %>
        </h4>
      </div>
    </div>
