@@ -19,6 +19,16 @@ require 'random_data'
    )
  end
 
+ # Create Questions
+
+ 100.times do
+  Question.create!(
+    title:  RandomData.random_sentence,
+    body:   RandomData.random_paragraph,
+    resolved: false
+  )
+end
+
  #Assignment 16
  puts "#{Post.count}"
  unique_post = Post.find_or_create_by(title: "Title-Unique", body: "Body-Unique")
@@ -31,3 +41,4 @@ require 'random_data'
  puts "Seed finished"
  puts "#{Post.count} posts created"
  puts "#{Comment.count} comments created"
+ puts "#{Question.count} questions created"
