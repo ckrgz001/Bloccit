@@ -30,6 +30,15 @@ require 'random_data'
  end
 
 
+ #Assignment 21 - Create SponsoredPosts.
+ 20.times do
+  SponsoredPost.create!(
+    topic:  topics.sample,
+    title:  RandomData.random_sentence,
+    body:   RandomData.random_paragraph,
+    price:  rand(10...50)
+  )
+end
 
  #Assignment 16
  puts "#{Post.count}"
@@ -44,3 +53,4 @@ require 'random_data'
  puts "#{Topic.count} topics created"
  puts "#{Post.count} posts created"
  puts "#{Comment.count} comments created"
+ puts "#{SponsoredPost.count} sponsored posts created"
