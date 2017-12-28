@@ -186,7 +186,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bcrypt (~> 3.1.7)
+  bcrypt
   bootstrap-sass
   jbuilder (~> 2.5)
   jquery-rails
