@@ -45,3 +45,5 @@ group :development do
 end
 
 gem 'bootstrap-sass'
+
+gem 'bcrypt', '~> 3.1.7'
