@@ -17,7 +17,6 @@ class TopicsController < ApplicationController
 
     def create
         @topic = Topic.new(topic_params)
- 
      if @topic.save
         redirect_to @topic, notice: "Topic was saved successfully."
      else
