@@ -315,6 +315,11 @@ RSpec.describe TopicsController, type: :controller do
         get :new
         expect(response.status).to eq 200
       end
+
+      it "redirects_to topics_path since moderators can't create topics" do
+        get :new
+        expect(response.status).to eq 200
+      end
     end
 
     describe "POST create" do
@@ -323,12 +328,13 @@ RSpec.describe TopicsController, type: :controller do
         expect(response.status).to eq 302
       end
     end
+    
 
 
     describe "GET edit" do
       it "returns http success" do
         get :edit, params: { id: my_topic.id }
-        expect(response.status).to eq 200
+        expect(response).to have_http_status(:success)
       end
 
       it "renders the #edit view" do

@@ -55,6 +55,13 @@ users = User.all
     password: 'helloworld'
   )
 
+  #Assignment 27 create a mod
+  mod = User.create!(
+    name:     'Moderator',
+    email:    'mod@example.com',
+    password: 'helloworld',
+    role:     'mod'
+  )
 
  #Assignment 16
  puts "#{Post.count}"
