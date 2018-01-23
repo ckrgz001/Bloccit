@@ -25,6 +25,13 @@ class User < ApplicationRecord
         favorites.where(post_id: post.id).first
     end
 
+    def has_posts?
+        self.posts.count > 0
+    end
+
+    def has_comments?
+        self.comments.count > 0
+    end
  
     def avatar_url(size)
          gravatar_id = Digest::MD5::hexdigest(self.email).downcase

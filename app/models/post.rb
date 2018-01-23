@@ -22,7 +22,7 @@ class Post < ApplicationRecord
     end
 
     def points
-        votes.sum(:value)
+        sum = votes.sum(:value)
     end
 
     def update_rank
